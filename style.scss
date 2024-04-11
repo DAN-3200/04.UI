@@ -1,0 +1,114 @@
+// - Import
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// - Variaveis [4|8 - Point Grid] e LEES[Lógico, Eficaz, Eficiente, Simples]
+$nRadius: 4px;
+$nMagin: 4px;
+$nPadding: 4px;
+
+$nDark: #28282b;
+$nLight : #EDEADE;
+$Periwinkle: #CCCCFF; 
+$Royal-Blue: #4169E1;
+$Yellow-Orange: #FFAA33;
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    box-sizing: border-box;
+}
+// - Style
+body{
+    padding: 0;
+    margin: 0;
+
+    background-color: $nLight;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    box{
+        width: 1080px;
+        height: 640px;
+        background-color: white;
+        border-radius: $nRadius;
+    
+        display: grid;
+        grid-template-columns: 1.2fr 1.6fr;
+        grid-template-areas: "M B";
+        overflow: hidden; // Garante que as Childrens respeitem suas delimitações dimensionais
+    }
+}
+main{
+    grid-area: M;
+    padding: $nPadding*4;
+    display: grid;
+    grid-template-rows:
+        0.4fr 0.8fr 1.2fr 0.4fr 1.2fr
+    ;
+    height: 640px;
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+
+        button{
+            background: transparent;
+            color: $nDark;
+            border: none;
+            min-width: 20px;
+            min-height: 20px;
+            border-radius: $nRadius;
+            font-size: 20px;
+            padding: $nPadding $nPadding*2;
+            cursor: pointer;
+            
+            &:hover{
+                transition: 0.3s;
+                background-color: silver;
+            }
+        }
+    }
+    .mainTitle{
+        h1{
+            color: #28282b;
+        }
+        p{
+            color: rgb(116, 116, 116);
+            font-size: 12px;
+        }
+    }
+}
+banner{
+    grid-area: B;
+    background-color: rebeccapurple;
+}
+.bannerText{
+    grid-area: B;
+    z-index: 2;
+    background-color: rgba(38, 212, 168, 0.253);
+    padding: $nPadding*4;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    p{
+        // background-color: $nLight;
+        width: 420px;
+        color: white;
+        text-align: justify;
+        border-radius: $nRadius;
+        position: relative;
+        top: -40px;
+    }
+}
+
