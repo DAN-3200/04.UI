@@ -5,6 +5,7 @@
 $nRadius: 4px;
 $nMagin: 4px;
 $nPadding: 4px;
+$nGap: 4px;
 
 $nDark: #28282b;
 $nLight : #EDEADE;
@@ -60,6 +61,7 @@ main{
         align-items: center;
         justify-content: space-between;
         font-size: 16px;
+        padding: 0px $nPadding;
 
         button{
             background: transparent;
@@ -71,14 +73,30 @@ main{
             font-size: 20px;
             padding: $nPadding $nPadding*2;
             cursor: pointer;
+            transition: 0.2s;
             
             &:hover{
                 transition: 0.3s;
-                background-color: silver;
+                color: #4169E1;
+            }
+            &:active{
+                transition: 0.2s;
+                transform: translateX(-4px);
+            }
+        }
+        span{
+            font-weight: 600;
+            cursor: default;
+            transition: 0.3s;
+
+            &:hover{
+                transition: 0.3s;
+                font-size: 16.8px;
             }
         }
     }
     .mainTitle{
+        padding: 0px $nPadding*3;
         h1{
             color: #28282b;
         }
@@ -87,15 +105,101 @@ main{
             font-size: 12px;
         }
     }
+    .fieldInput{
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $nGap*4;
+
+        input[type="text"]{
+            width: 360px;
+            height: 44px;
+            padding: $nPadding $nPadding*4;
+            border-radius: $nRadius;
+            background-color: $nLight;
+            border: none;
+            font-size: 12px;
+            outline: none;
+            border: 2px solid transparent;
+            transition: 0.2s;
+
+            &:focus{
+                transition: 0.2;
+                border: 2px solid $Royal-Blue;
+            }
+        }
+        span{
+            align-self: flex-end;
+            position: relative;
+            right: 40px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+    }
+    .loginNow{
+        width: 320px;
+        height: 48px;
+        margin-top: $nMagin*2;
+        border-radius: $nRadius;
+        border: none;
+        background-color: #4169E1;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+    }
+    .extra{
+        display: grid;
+        grid-template-rows: 0.8fr 0.4fr 1.6fr;
+        align-items: center;
+        justify-items: center;
+
+        hr{
+            height: 4px;
+            width: 320px;
+            background-color: $nLight;
+            border: none;
+        }
+        span{
+            font-size: 12px;
+        }
+        .iconSocial{
+            padding-bottom: $nPadding*2;
+            display: flex;
+            flex-direction: row;
+            gap: $nGap*2;
+            button{
+                position: relative;
+                top: -16px;
+                width: 40px;
+                height: 40px;
+                border: none;
+                border-radius: $nRadius;
+                color: $Royal-Blue;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:focus{
+                    transition: 0.3s;
+                    background-color: $Royal-Blue;
+                    color: white;
+                }
+            }
+        }
+    }
 }
 banner{
     grid-area: B;
-    background-color: rebeccapurple;
+    background-color: $Royal-Blue;
 }
 .bannerText{
     grid-area: B;
     z-index: 2;
-    background-color: rgba(38, 212, 168, 0.253);
     padding: $nPadding*4;
     display: flex;
     align-items: end;
