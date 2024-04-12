@@ -112,7 +112,7 @@ main{
         align-items: center;
         gap: $nGap*4;
 
-        input[type="text"]{
+        input[type="text"], input[type='password']{
             width: 360px;
             height: 44px;
             padding: $nPadding $nPadding*4;
@@ -151,6 +151,11 @@ main{
         justify-self: center;
         align-self: center;
         cursor: pointer;
+
+        &:active{
+            transition: 0.3s;
+            transform: translateY(4px);
+        }
     }
     .extra{
         display: grid;
@@ -196,23 +201,66 @@ main{
 banner{
     grid-area: B;
     background-color: $Royal-Blue;
+
+    video{
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover; /* o vídeo preencher completamente a div */
+
+        &::-webkit-media-controls {
+            display: none;
+          }
+          
+        &::-webkit-media-controls-enclosure {
+            display: none;
+        }
+          
+    }
 }
 .bannerText{
     grid-area: B;
     z-index: 2;
     padding: $nPadding*4;
     display: flex;
-    align-items: end;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.507);
 
     p{
-        // background-color: $nLight;
+        align-self: flex-end;
         width: 420px;
         color: white;
         text-align: justify;
         border-radius: $nRadius;
+        font-size: 16px;
+        font-weight: 500;
         position: relative;
         top: -40px;
     }
 }
 
+.OHKEN{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: $Periwinkle;
+    border: 2.4px solid $Periwinkle;
+    cursor: default;
+    transition: 0.2s;
+    height: 24px;
+
+    position: absolute;
+
+    &:hover{
+        transition: 0.3s;
+        color: white;
+    }
+    span{
+        font-size: 12px;
+    }
+
+}
